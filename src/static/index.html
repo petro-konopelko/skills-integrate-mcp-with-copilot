@@ -12,6 +12,25 @@
       <h2>Extracurricular Activities</h2>
     </header>
 
+    <section id="auth-container">
+      <h3>Sign In</h3>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" required placeholder="student or admin" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" required placeholder="Enter password" />
+        </div>
+        <div class="auth-actions">
+          <button type="submit">Log In</button>
+          <button type="button" id="logout-btn" class="hidden">Log Out</button>
+        </div>
+      </form>
+      <p id="auth-status">Not signed in</p>
+    </section>
+
     <main>
       <section id="activities-container">
         <h3>Available Activities</h3>
@@ -25,10 +44,6 @@
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
-          </div>
-          <div class="form-group">
             <label for="activity">Select Activity:</label>
             <select id="activity" required>
               <option value="">-- Select an activity --</option>
@@ -38,6 +53,65 @@
           <button type="submit">Sign Up</button>
         </form>
         <div id="message" class="hidden"></div>
+      </section>
+
+      <section id="admin-container" class="hidden">
+        <h3>Admin Activity Management</h3>
+
+        <form id="create-activity-form">
+          <h4>Create Activity</h4>
+          <div class="form-group">
+            <label for="create-name">Name:</label>
+            <input type="text" id="create-name" required />
+          </div>
+          <div class="form-group">
+            <label for="create-description">Description:</label>
+            <input type="text" id="create-description" required />
+          </div>
+          <div class="form-group">
+            <label for="create-schedule">Schedule:</label>
+            <input type="text" id="create-schedule" required />
+          </div>
+          <div class="form-group">
+            <label for="create-max">Max Participants:</label>
+            <input type="number" id="create-max" min="1" required />
+          </div>
+          <button type="submit">Create Activity</button>
+        </form>
+
+        <form id="update-activity-form">
+          <h4>Update Activity</h4>
+          <div class="form-group">
+            <label for="update-activity">Activity:</label>
+            <select id="update-activity" required>
+              <option value="">-- Select an activity --</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="update-description">Description:</label>
+            <input type="text" id="update-description" required />
+          </div>
+          <div class="form-group">
+            <label for="update-schedule">Schedule:</label>
+            <input type="text" id="update-schedule" required />
+          </div>
+          <div class="form-group">
+            <label for="update-max">Max Participants:</label>
+            <input type="number" id="update-max" min="1" required />
+          </div>
+          <button type="submit">Update Activity</button>
+        </form>
+
+        <form id="delete-activity-form">
+          <h4>Delete Activity</h4>
+          <div class="form-group">
+            <label for="delete-activity">Activity:</label>
+            <select id="delete-activity" required>
+              <option value="">-- Select an activity --</option>
+            </select>
+          </div>
+          <button type="submit">Delete Activity</button>
+        </form>
       </section>
     </main>
 
